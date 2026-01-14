@@ -10,37 +10,37 @@ This documentation site demonstrates the power and flexibility of MKDocs with Ma
 
 <div class="grid cards" markdown>
 
--   :material-rocket-launch:{ .lg .middle } __Getting Started__
+-   🚀 **Getting Started**
 
     ---
 
     Learn how to get up and running quickly with step-by-step guides.
 
-    [:octicons-arrow-right-24: Get Started](getting-started/introduction.md)
+    [Get Started](getting-started/introduction.md)
 
--   :material-book-open-variant:{ .lg .middle } __User Guide__
+-   📚 **User Guide**
 
     ---
 
     Comprehensive guides for using all features effectively.
 
-    [:octicons-arrow-right-24: View Guide](user-guide/overview.md)
+    [View Guide](user-guide/overview.md)
 
--   :material-api:{ .lg .middle } __API Reference__
+-   🔧 **API Reference**
 
     ---
 
     Detailed API documentation and function references.
 
-    [:octicons-arrow-right-24: Browse API](api/overview.md)
+    [Browse API](api/overview.md)
 
--   :material-information:{ .lg .middle } __About__
+-   ℹ️ **About**
 
     ---
 
     Learn about contributing and licensing information.
 
-    [:octicons-arrow-right-24: Learn More](about/contributing.md)
+    [Learn More](about/contributing.md)
 
 </div>
 
