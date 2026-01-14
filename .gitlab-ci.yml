@@ -1,0 +1,31 @@
+image: python:3.9
+
+# Cache pip packages between builds
+cache:
+  paths:
+    - .cache/pip
+
+# Run before every job
+before_script:
+  - pip install --upgrade pip
+  - pip install mkdocs mkdocs-material
+
+# Test job - runs on all branches
+test:
+  stage: test
+  script:
+    - mkdocs build --strict --verbose
+  except:
+    - main
+
+# Pages job - only runs on main branch
+pages:
+  stage: deploy
+  script:
+    - mkdocs build --strict --verbose
+    - mv site public
+  artifacts:
+    paths:
+      - public
+  only:
+    - main
