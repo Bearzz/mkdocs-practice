@@ -199,3 +199,11 @@ Need help getting started?
 
 !!! success "Thank You!"
     Every contribution, no matter how small, makes a difference. We appreciate your help in making our documentation better!
+
+| Company  | Supported? | Notes |
+| -------- | ---------- | ----- |
+| Venafi   | Yes        |       |
+| CyberArk | Yes        |       |
+| PAN      | No         |       |
+|          |            |       |
+
