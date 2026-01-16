@@ -94,68 +94,68 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 <h2 id="core-concepts">Core Concepts<a class="headerlink" href="#core-concepts" title="Permanent link">&para;</a></h2>
 <h3 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h3>
 <p>All configuration is done through the <code>mkdocs.yml</code> file:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">site_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">My Site</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nt">theme</span><span class="p">:</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">material</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nt">nav</span><span class="p">:</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Home</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">index.md</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Guide</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">guide.md</span>
-</code></pre></div>
+<pre><code class="language-yaml">site_name: My Site
+theme:
+  name: material
+nav:
+  - Home: index.md
+  - Guide: guide.md
+</code></pre>
 <h3 id="writing-content">Writing Content<a class="headerlink" href="#writing-content" title="Permanent link">&para;</a></h3>
 <p>Content is written in Markdown format:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="gh"># Main Heading</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>This is a paragraph with <span class="gs">**bold**</span> and <span class="ge">*italic*</span> text.
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="k">-</span><span class="w"> </span>List item 1
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="k">-</span><span class="w"> </span>List item 2
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="k">1.</span> Numbered item
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="k">2.</span> Another item
-</code></pre></div>
+<pre><code class="language-markdown"># Main Heading
+
+This is a paragraph with **bold** and *italic* text.
+
+- List item 1
+- List item 2
+
+1. Numbered item
+2. Another item
+</code></pre>
 <h2 id="common-tasks">Common Tasks<a class="headerlink" href="#common-tasks" title="Permanent link">&para;</a></h2>
 <h3 id="task-1-creating-a-new-page">Task 1: Creating a New Page<a class="headerlink" href="#task-1-creating-a-new-page" title="Permanent link">&para;</a></h3>
 <p><strong>Step 1</strong>: Create a new <code>.md</code> file in the <code>docs/</code> directory</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>touch<span class="w"> </span>docs/new-page.md
-</code></pre></div>
+<pre><code class="language-bash">touch docs/new-page.md
+</code></pre>
 <p><strong>Step 2</strong>: Add content to your page</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="gh"># My New Page</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>This is the content of my new page.
-</code></pre></div>
+<pre><code class="language-markdown"># My New Page
+
+This is the content of my new page.
+</code></pre>
 <p><strong>Step 3</strong>: Add it to navigation in <code>mkdocs.yml</code></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">nav</span><span class="p">:</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Home</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">index.md</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">New Page</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">new-page.md</span>
-</code></pre></div>
+<pre><code class="language-yaml">nav:
+  - Home: index.md
+  - New Page: new-page.md
+</code></pre>
 <div class="admonition success">
 <p class="admonition-title">Page Created</p>
 <p>Your new page is now accessible in the navigation menu!</p>
 </div>
 <h3 id="task-2-adding-images">Task 2: Adding Images<a class="headerlink" href="#task-2-adding-images" title="Permanent link">&para;</a></h3>
 <p>Place images in your <code>docs/</code> directory and reference them:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>![<span class="nt">Alt text</span>](<span class="na">images/my-image.png</span>)
-</code></pre></div>
+<pre><code class="language-markdown">![Alt text](images/my-image.png)
+</code></pre>
 <p>With a caption:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>![<span class="nt">Alt text</span>](<span class="na">images/my-image.png</span>)
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="ge">*Figure 1: Image caption*</span>
-</code></pre></div>
+<pre><code class="language-markdown">![Alt text](images/my-image.png)
+*Figure 1: Image caption*
+</code></pre>
 <h3 id="task-3-creating-links">Task 3: Creating Links<a class="headerlink" href="#task-3-creating-links" title="Permanent link">&para;</a></h3>
 <p>Internal links to other pages:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>[<span class="nt">Link text</span>](<span class="na">other-page.md</span>)
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>[<span class="nt">Getting Started</span>](<span class="na">getting-started/introduction.md</span>)
-</code></pre></div>
+<pre><code class="language-markdown">[Link text](other-page.md)
+[Getting Started](getting-started/introduction.md)
+</code></pre>
 <p>External links:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>[<span class="nt">Google</span>](<span class="na">https://www.google.com</span>)
-</code></pre></div>
+<pre><code class="language-markdown">[Google](https://www.google.com)
+</code></pre>
 <h3 id="task-4-adding-code-blocks">Task 4: Adding Code Blocks<a class="headerlink" href="#task-4-adding-code-blocks" title="Permanent link">&para;</a></h3>
 <p>Inline code: `code here`</p>
 <p>Block code with syntax highlighting:</p>
-<div class="highlight"><pre><span></span><code>```python
+<pre><code>```python
 def hello_world():
-    print(&quot;Hello, World!&quot;)
+    print("Hello, World!")
 ```
-</code></pre></div>
+</code></pre>
 <h2 id="content-features">Content Features<a class="headerlink" href="#content-features" title="Permanent link">&para;</a></h2>
 <h3 id="admonitions">Admonitions<a class="headerlink" href="#admonitions" title="Permanent link">&para;</a></h3>
 <p>Create callout boxes for important information:</p>

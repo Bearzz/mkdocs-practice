@@ -103,26 +103,26 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 <h3 id="1-fork-the-repository">1. Fork the Repository<a class="headerlink" href="#1-fork-the-repository" title="Permanent link">&para;</a></h3>
 <p>Click the "Fork" button on our GitHub repository to create your own copy.</p>
 <h3 id="2-clone-your-fork">2. Clone Your Fork<a class="headerlink" href="#2-clone-your-fork" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/YOUR_USERNAME/project-name.git
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">cd</span><span class="w"> </span>project-name
-</code></pre></div>
+<pre><code class="language-bash">git clone https://github.com/YOUR_USERNAME/project-name.git
+cd project-name
+</code></pre>
 <h3 id="3-create-a-branch">3. Create a Branch<a class="headerlink" href="#3-create-a-branch" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>feature/your-feature-name
-</code></pre></div>
+<pre><code class="language-bash">git checkout -b feature/your-feature-name
+</code></pre>
 <h3 id="4-make-your-changes">4. Make Your Changes<a class="headerlink" href="#4-make-your-changes" title="Permanent link">&para;</a></h3>
 <p>Edit the Markdown files in the <code>docs/</code> directory.</p>
 <h3 id="5-test-locally">5. Test Locally<a class="headerlink" href="#5-test-locally" title="Permanent link">&para;</a></h3>
 <p>Run the development server to preview your changes:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>mkdocs<span class="w"> </span>serve
-</code></pre></div>
+<pre><code class="language-bash">mkdocs serve
+</code></pre>
 <p>Visit <code>http://127.0.0.1:8000/</code> to see your changes.</p>
 <h3 id="6-commit-your-changes">6. Commit Your Changes<a class="headerlink" href="#6-commit-your-changes" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>git<span class="w"> </span>add<span class="w"> </span>.
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Add: description of your changes&quot;</span>
-</code></pre></div>
+<pre><code class="language-bash">git add .
+git commit -m &quot;Add: description of your changes&quot;
+</code></pre>
 <h3 id="7-push-to-github">7. Push to GitHub<a class="headerlink" href="#7-push-to-github" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>feature/your-feature-name
-</code></pre></div>
+<pre><code class="language-bash">git push origin feature/your-feature-name
+</code></pre>
 <h3 id="8-create-a-pull-request">8. Create a Pull Request<a class="headerlink" href="#8-create-a-pull-request" title="Permanent link">&para;</a></h3>
 <p>Go to the original repository and click "New Pull Request".</p>
 <h2 id="contribution-guidelines">Contribution Guidelines<a class="headerlink" href="#contribution-guidelines" title="Permanent link">&para;</a></h2>
@@ -146,15 +146,15 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 <li>Include expected output when relevant</li>
 </ul>
 <p>Example:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Good example with clear comments</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="k">def</span><span class="w"> </span><span class="nf">calculate_total</span><span class="p">(</span><span class="n">items</span><span class="p">):</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculate the total price of items.&quot;&quot;&quot;</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">price</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items</span><span class="p">)</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="c1"># Usage</span>
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="n">total</span> <span class="o">=</span> <span class="n">calculate_total</span><span class="p">(</span><span class="n">cart_items</span><span class="p">)</span>
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total: $</span><span class="si">{</span><span class="n">total</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># Total: $150.00</span>
-</code></pre></div>
+<pre><code class="language-python"># Good example with clear comments
+def calculate_total(items):
+    &quot;&quot;&quot;Calculate the total price of items.&quot;&quot;&quot;
+    return sum(item.price for item in items)
+
+# Usage
+total = calculate_total(cart_items)
+print(f&quot;Total: ${total}&quot;)  # Total: $150.00
+</code></pre>
 <h3 id="markdown-conventions">Markdown Conventions<a class="headerlink" href="#markdown-conventions" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Use <code>#</code> for headings (not underlines)</li>
@@ -164,12 +164,12 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 </ul>
 <h3 id="commit-messages">Commit Messages<a class="headerlink" href="#commit-messages" title="Permanent link">&para;</a></h3>
 <p>Follow this format:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Type: Brief description
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>Detailed explanation if needed.
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>Closes #issue_number
-</code></pre></div>
+<pre><code>Type: Brief description
+
+Detailed explanation if needed.
+
+Closes #issue_number
+</code></pre>
 <p>Types:
 - <code>Add</code>: New content
 - <code>Update</code>: Modify existing content
@@ -177,13 +177,13 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 - <code>Remove</code>: Delete content
 - <code>Docs</code>: Documentation-only changes</p>
 <p>Examples:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Add: Getting started tutorial
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>Updated the getting started section with a comprehensive tutorial
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>including installation steps and first project setup.
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>Closes #42
-</code></pre></div>
+<pre><code>Add: Getting started tutorial
+
+Updated the getting started section with a comprehensive tutorial
+including installation steps and first project setup.
+
+Closes #42
+</code></pre>
 <h2 id="review-process">Review Process<a class="headerlink" href="#review-process" title="Permanent link">&para;</a></h2>
 <ol>
 <li><strong>Automated Checks</strong>: CI runs automated tests</li>

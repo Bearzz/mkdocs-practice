@@ -89,9 +89,9 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 <h2 id="core-functions">Core Functions<a class="headerlink" href="#core-functions" title="Permanent link">&para;</a></h2>
 <h3 id="get_data"><code>get_data()</code><a class="headerlink" href="#get_data" title="Permanent link">&para;</a></h3>
 <p>Retrieves data from the specified resource.</p>
-<p><strong>Signature:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">get_data</span><span class="p">(</span><span class="n">resource_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">options</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span>
-</code></pre></div></p>
+<p><strong>Signature:</strong></p>
+<pre><code class="language-python">get_data(resource_id: str, options: dict = None) -&gt; dict
+</code></pre>
 <p><strong>Parameters:</strong></p>
 <table>
 <thead>
@@ -133,25 +133,25 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 </tbody>
 </table>
 <p><strong>Example:</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">api</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_data</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1"># Basic usage</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">data</span> <span class="o">=</span> <span class="n">get_data</span><span class="p">(</span><span class="s2">&quot;12345&quot;</span><span class="p">)</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="c1"># With options</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="n">data</span> <span class="o">=</span> <span class="n">get_data</span><span class="p">(</span><span class="s2">&quot;12345&quot;</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="p">{</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    <span class="s2">&quot;include_metadata&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    <span class="s2">&quot;format&quot;</span><span class="p">:</span> <span class="s2">&quot;json&quot;</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="p">})</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="c1"># Output:</span>
-<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="c1"># {</span>
-<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="c1">#     &quot;id&quot;: &quot;12345&quot;,</span>
-<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="c1">#     &quot;name&quot;: &quot;Example Resource&quot;,</span>
-<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="c1">#     &quot;created_at&quot;: &quot;2026-01-14T09:00:00Z&quot;</span>
-<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="c1"># }</span>
-</code></pre></div>
+<pre><code class="language-python">from api import get_data
+
+# Basic usage
+data = get_data(&quot;12345&quot;)
+
+# With options
+data = get_data(&quot;12345&quot;, options={
+    &quot;include_metadata&quot;: True,
+    &quot;format&quot;: &quot;json&quot;
+})
+
+print(data)
+# Output:
+# {
+#     &quot;id&quot;: &quot;12345&quot;,
+#     &quot;name&quot;: &quot;Example Resource&quot;,
+#     &quot;created_at&quot;: &quot;2026-01-14T09:00:00Z&quot;
+# }
+</code></pre>
 <p><strong>Errors:</strong></p>
 <ul>
 <li><code>ValueError</code>: If resource_id is empty or invalid</li>
@@ -161,9 +161,9 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 <hr />
 <h3 id="create_resource"><code>create_resource()</code><a class="headerlink" href="#create_resource" title="Permanent link">&para;</a></h3>
 <p>Creates a new resource with the specified data.</p>
-<p><strong>Signature:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">create_resource</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">validate</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span>
-</code></pre></div></p>
+<p><strong>Signature:</strong></p>
+<pre><code class="language-python">create_resource(data: dict, validate: bool = True) -&gt; dict
+</code></pre>
 <p><strong>Parameters:</strong></p>
 <table>
 <thead>
@@ -205,25 +205,25 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 </tbody>
 </table>
 <p><strong>Example:</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">api</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_resource</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1"># Create a new resource</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">new_resource</span> <span class="o">=</span> <span class="n">create_resource</span><span class="p">({</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;My Resource&quot;</span><span class="p">,</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;document&quot;</span><span class="p">,</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    <span class="s2">&quot;tags&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;important&quot;</span><span class="p">,</span> <span class="s2">&quot;draft&quot;</span><span class="p">]</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="p">})</span>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="nb">print</span><span class="p">(</span><span class="n">new_resource</span><span class="p">)</span>
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="c1"># Output:</span>
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="c1"># {</span>
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="c1">#     &quot;id&quot;: &quot;new-id-67890&quot;,</span>
-<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="c1">#     &quot;name&quot;: &quot;My Resource&quot;,</span>
-<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="c1">#     &quot;type&quot;: &quot;document&quot;,</span>
-<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="c1">#     &quot;tags&quot;: [&quot;important&quot;, &quot;draft&quot;],</span>
-<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="c1">#     &quot;created_at&quot;: &quot;2026-01-14T09:00:00Z&quot;</span>
-<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="c1"># }</span>
-</code></pre></div>
+<pre><code class="language-python">from api import create_resource
+
+# Create a new resource
+new_resource = create_resource({
+    &quot;name&quot;: &quot;My Resource&quot;,
+    &quot;type&quot;: &quot;document&quot;,
+    &quot;tags&quot;: [&quot;important&quot;, &quot;draft&quot;]
+})
+
+print(new_resource)
+# Output:
+# {
+#     &quot;id&quot;: &quot;new-id-67890&quot;,
+#     &quot;name&quot;: &quot;My Resource&quot;,
+#     &quot;type&quot;: &quot;document&quot;,
+#     &quot;tags&quot;: [&quot;important&quot;, &quot;draft&quot;],
+#     &quot;created_at&quot;: &quot;2026-01-14T09:00:00Z&quot;
+# }
+</code></pre>
 <p><strong>Errors:</strong></p>
 <ul>
 <li><code>ValidationError</code>: If data doesn't meet schema requirements</li>
@@ -233,9 +233,9 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 <hr />
 <h3 id="update_resource"><code>update_resource()</code><a class="headerlink" href="#update_resource" title="Permanent link">&para;</a></h3>
 <p>Updates an existing resource with new data.</p>
-<p><strong>Signature:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">update_resource</span><span class="p">(</span><span class="n">resource_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">partial</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span>
-</code></pre></div></p>
+<p><strong>Signature:</strong></p>
+<pre><code class="language-python">update_resource(resource_id: str, data: dict, partial: bool = False) -&gt; dict
+</code></pre>
 <p><strong>Parameters:</strong></p>
 <table>
 <thead>
@@ -283,26 +283,26 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 </tbody>
 </table>
 <p><strong>Example:</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">api</span><span class="w"> </span><span class="kn">import</span> <span class="n">update_resource</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1"># Full update</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="n">updated</span> <span class="o">=</span> <span class="n">update_resource</span><span class="p">(</span><span class="s2">&quot;12345&quot;</span><span class="p">,</span> <span class="p">{</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Updated Name&quot;</span><span class="p">,</span>
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;document&quot;</span><span class="p">,</span>
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>    <span class="s2">&quot;tags&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;updated&quot;</span><span class="p">]</span>
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="p">})</span>
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>
-<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="c1"># Partial update</span>
-<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="n">updated</span> <span class="o">=</span> <span class="n">update_resource</span><span class="p">(</span><span class="s2">&quot;12345&quot;</span><span class="p">,</span> <span class="p">{</span>
-<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;New Name&quot;</span>
-<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="p">},</span> <span class="n">partial</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</code></pre></div>
+<pre><code class="language-python">from api import update_resource
+
+# Full update
+updated = update_resource(&quot;12345&quot;, {
+    &quot;name&quot;: &quot;Updated Name&quot;,
+    &quot;type&quot;: &quot;document&quot;,
+    &quot;tags&quot;: [&quot;updated&quot;]
+})
+
+# Partial update
+updated = update_resource(&quot;12345&quot;, {
+    &quot;name&quot;: &quot;New Name&quot;
+}, partial=True)
+</code></pre>
 <hr />
 <h3 id="delete_resource"><code>delete_resource()</code><a class="headerlink" href="#delete_resource" title="Permanent link">&para;</a></h3>
 <p>Deletes a resource permanently.</p>
-<p><strong>Signature:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">delete_resource</span><span class="p">(</span><span class="n">resource_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">force</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span>
-</code></pre></div></p>
+<p><strong>Signature:</strong></p>
+<pre><code class="language-python">delete_resource(resource_id: str, force: bool = False) -&gt; bool
+</code></pre>
 <p><strong>Parameters:</strong></p>
 <table>
 <thead>
@@ -344,17 +344,17 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 </tbody>
 </table>
 <p><strong>Example:</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">api</span><span class="w"> </span><span class="kn">import</span> <span class="n">delete_resource</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="c1"># Standard deletion</span>
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="n">success</span> <span class="o">=</span> <span class="n">delete_resource</span><span class="p">(</span><span class="s2">&quot;12345&quot;</span><span class="p">)</span>
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="c1"># Force deletion</span>
-<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="n">success</span> <span class="o">=</span> <span class="n">delete_resource</span><span class="p">(</span><span class="s2">&quot;12345&quot;</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>
-<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="k">if</span> <span class="n">success</span><span class="p">:</span>
-<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Resource deleted successfully&quot;</span><span class="p">)</span>
-</code></pre></div>
+<pre><code class="language-python">from api import delete_resource
+
+# Standard deletion
+success = delete_resource(&quot;12345&quot;)
+
+# Force deletion
+success = delete_resource(&quot;12345&quot;, force=True)
+
+if success:
+    print(&quot;Resource deleted successfully&quot;)
+</code></pre>
 <p><strong>Warnings:</strong></p>
 <div class="admonition danger">
 <p class="admonition-title">Permanent Action</p>
@@ -364,9 +364,9 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 <h2 id="utility-functions">Utility Functions<a class="headerlink" href="#utility-functions" title="Permanent link">&para;</a></h2>
 <h3 id="validate_input"><code>validate_input()</code><a class="headerlink" href="#validate_input" title="Permanent link">&para;</a></h3>
 <p>Validates input data against a schema.</p>
-<p><strong>Signature:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">validate_input</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">schema</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">bool</span><span class="p">,</span> <span class="nb">list</span><span class="p">]</span>
-</code></pre></div></p>
+<p><strong>Signature:</strong></p>
+<pre><code class="language-python">validate_input(data: dict, schema: dict) -&gt; tuple[bool, list]
+</code></pre>
 <p><strong>Parameters:</strong></p>
 <table>
 <thead>
@@ -408,27 +408,27 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 </tbody>
 </table>
 <p><strong>Example:</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">api</span><span class="w"> </span><span class="kn">import</span> <span class="n">validate_input</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="n">schema</span> <span class="o">=</span> <span class="p">{</span>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>    <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span> <span class="s2">&quot;required&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;min_length&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">},</span>
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>    <span class="s2">&quot;age&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;integer&quot;</span><span class="p">,</span> <span class="s2">&quot;required&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;min&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">}</span>
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="p">}</span>
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>
-<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;John&quot;</span><span class="p">,</span> <span class="s2">&quot;age&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">}</span>
-<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="n">is_valid</span><span class="p">,</span> <span class="n">errors</span> <span class="o">=</span> <span class="n">validate_input</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">schema</span><span class="p">)</span>
-<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>
-<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="k">if</span> <span class="n">is_valid</span><span class="p">:</span>
-<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Data is valid&quot;</span><span class="p">)</span>
-<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Validation errors: </span><span class="si">{</span><span class="n">errors</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</code></pre></div>
+<pre><code class="language-python">from api import validate_input
+
+schema = {
+    &quot;name&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;required&quot;: True, &quot;min_length&quot;: 3},
+    &quot;age&quot;: {&quot;type&quot;: &quot;integer&quot;, &quot;required&quot;: False, &quot;min&quot;: 0}
+}
+
+data = {&quot;name&quot;: &quot;John&quot;, &quot;age&quot;: 30}
+is_valid, errors = validate_input(data, schema)
+
+if is_valid:
+    print(&quot;Data is valid&quot;)
+else:
+    print(f&quot;Validation errors: {errors}&quot;)
+</code></pre>
 <hr />
 <h3 id="format_response"><code>format_response()</code><a class="headerlink" href="#format_response" title="Permanent link">&para;</a></h3>
 <p>Formats API response data according to specified format.</p>
-<p><strong>Signature:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">format_response</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">format_type</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;json&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span>
-</code></pre></div></p>
+<p><strong>Signature:</strong></p>
+<pre><code class="language-python">format_response(data: dict, format_type: str = &quot;json&quot;) -&gt; str
+</code></pre>
 <p><strong>Parameters:</strong></p>
 <table>
 <thead>
@@ -470,26 +470,26 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 </tbody>
 </table>
 <p><strong>Example:</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">api</span><span class="w"> </span><span class="kn">import</span> <span class="n">format_response</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Example&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="mi">123</span><span class="p">}</span>
-<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
-<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="c1"># JSON format (default)</span>
-<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="n">json_output</span> <span class="o">=</span> <span class="n">format_response</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>
-<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="c1"># XML format</span>
-<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="n">xml_output</span> <span class="o">=</span> <span class="n">format_response</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">format_type</span><span class="o">=</span><span class="s2">&quot;xml&quot;</span><span class="p">)</span>
-<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>
-<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="c1"># YAML format</span>
-<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="n">yaml_output</span> <span class="o">=</span> <span class="n">format_response</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">format_type</span><span class="o">=</span><span class="s2">&quot;yaml&quot;</span><span class="p">)</span>
-</code></pre></div>
+<pre><code class="language-python">from api import format_response
+
+data = {&quot;name&quot;: &quot;Example&quot;, &quot;value&quot;: 123}
+
+# JSON format (default)
+json_output = format_response(data)
+
+# XML format
+xml_output = format_response(data, format_type=&quot;xml&quot;)
+
+# YAML format
+yaml_output = format_response(data, format_type=&quot;yaml&quot;)
+</code></pre>
 <hr />
 <h2 id="batch-operations">Batch Operations<a class="headerlink" href="#batch-operations" title="Permanent link">&para;</a></h2>
 <h3 id="batch_create"><code>batch_create()</code><a class="headerlink" href="#batch_create" title="Permanent link">&para;</a></h3>
 <p>Creates multiple resources in a single operation.</p>
-<p><strong>Signature:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">batch_create</span><span class="p">(</span><span class="n">items</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">dict</span><span class="p">],</span> <span class="n">continue_on_error</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">dict</span><span class="p">]</span>
-</code></pre></div></p>
+<p><strong>Signature:</strong></p>
+<pre><code class="language-python">batch_create(items: list[dict], continue_on_error: bool = False) -&gt; list[dict]
+</code></pre>
 <p><strong>Parameters:</strong></p>
 <table>
 <thead>
@@ -531,17 +531,17 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 </tbody>
 </table>
 <p><strong>Example:</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">api</span><span class="w"> </span><span class="kn">import</span> <span class="n">batch_create</span>
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
-<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="n">items</span> <span class="o">=</span> <span class="p">[</span>
-<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>    <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Resource 1&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;document&quot;</span><span class="p">},</span>
-<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>    <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Resource 2&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;image&quot;</span><span class="p">},</span>
-<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>    <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Resource 3&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;video&quot;</span><span class="p">}</span>
-<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="p">]</span>
-<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>
-<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="n">results</span> <span class="o">=</span> <span class="n">batch_create</span><span class="p">(</span><span class="n">items</span><span class="p">,</span> <span class="n">continue_on_error</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Created </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">results</span><span class="p">)</span><span class="si">}</span><span class="s2"> resources&quot;</span><span class="p">)</span>
-</code></pre></div>
+<pre><code class="language-python">from api import batch_create
+
+items = [
+    {&quot;name&quot;: &quot;Resource 1&quot;, &quot;type&quot;: &quot;document&quot;},
+    {&quot;name&quot;: &quot;Resource 2&quot;, &quot;type&quot;: &quot;image&quot;},
+    {&quot;name&quot;: &quot;Resource 3&quot;, &quot;type&quot;: &quot;video&quot;}
+]
+
+results = batch_create(items, continue_on_error=True)
+print(f&quot;Created {len(results)} resources&quot;)
+</code></pre>
 <div class="admonition tip">
 <p class="admonition-title">Performance</p>
 <p>Batch operations are significantly faster than individual calls. Use them when creating/updating multiple resources.</p>

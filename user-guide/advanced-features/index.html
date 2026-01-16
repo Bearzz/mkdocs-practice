@@ -98,12 +98,12 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 <p>Unlock the full potential of MKDocs Material with these advanced features.</p>
 <h2 id="code-annotations">Code Annotations<a class="headerlink" href="#code-annotations" title="Permanent link">&para;</a></h2>
 <p>Add annotations to code blocks for detailed explanations:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">process_data</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>  <span class="c1"># (1)</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>  <span class="c1"># (2)</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="k">return</span> <span class="n">result</span>  <span class="c1"># (3)</span>
-</code></pre></div>
+<pre><code class="language-python">def process_data(data):  # (1)
+    result = []
+    for item in data:  # (2)
+        result.append(item * 2)
+    return result  # (3)
+</code></pre>
 <ol>
 <li>Main function that processes input data</li>
 <li>Iterate through each item in the data</li>
@@ -111,38 +111,27 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 </ol>
 <h2 id="content-tabs">Content Tabs<a class="headerlink" href="#content-tabs" title="Permanent link">&para;</a></h2>
 <p>Organize content in tabs for different scenarios:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Python</label><label for="__tabbed_1_2">JavaScript</label><label for="__tabbed_1_3">Go</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">hello</span><span class="p">():</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello from Python!&quot;</span><span class="p">)</span>
-</code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">hello</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Hello from JavaScript!&quot;</span><span class="p">);</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="p">}</span>
-</code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">func</span><span class="w"> </span><span class="nx">hello</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Hello from Go!&quot;</span><span class="p">)</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="p">}</span>
-</code></pre></div>
-</div>
-</div>
-</div>
+<p>=== "Python"
+    <code>python
+    def hello():
+        print("Hello from Python!")</code></p>
+<p>=== "JavaScript"
+    <code>javascript
+    function hello() {
+        console.log("Hello from JavaScript!");
+    }</code></p>
+<p>=== "Go"
+    <code>go
+    func hello() {
+        fmt.Println("Hello from Go!")
+    }</code></p>
 <h2 id="advanced-admonitions">Advanced Admonitions<a class="headerlink" href="#advanced-admonitions" title="Permanent link">&para;</a></h2>
 <h3 id="collapsible-admonitions">Collapsible Admonitions<a class="headerlink" href="#collapsible-admonitions" title="Permanent link">&para;</a></h3>
 <p>Create expandable/collapsible sections:</p>
-<details class="note">
-<summary>Click to expand</summary>
-<p>This content is hidden by default and can be expanded by clicking.</p>
-</details>
-<details class="warning">
-<summary>Important Warning</summary>
-<p>This is a collapsible warning that requires user interaction to view.</p>
-</details>
+<p>??? note "Click to expand"
+    This content is hidden by default and can be expanded by clicking.</p>
+<p>??? warning "Important Warning"
+    This is a collapsible warning that requires user interaction to view.</p>
 <h3 id="custom-titles">Custom Titles<a class="headerlink" href="#custom-titles" title="Permanent link">&para;</a></h3>
 <div class="admonition danger">
 <p class="admonition-title">Critical Security Warning</p>
@@ -187,23 +176,23 @@ $$</p>
 <h2 id="diagrams-with-mermaid">Diagrams with Mermaid<a class="headerlink" href="#diagrams-with-mermaid" title="Permanent link">&para;</a></h2>
 <p>Create diagrams directly in Markdown:</p>
 <h3 id="flow-diagram">Flow Diagram<a class="headerlink" href="#flow-diagram" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>graph TD
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    A[Start] --&gt; B{Is it?}
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    B --&gt;|Yes| C[OK]
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    C --&gt; D[Rethink]
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    D --&gt; B
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    B ----&gt;|No| E[End]
-</code></pre></div>
+<pre><code class="language-mermaid">graph TD
+    A[Start] --&gt; B{Is it?}
+    B --&gt;|Yes| C[OK]
+    C --&gt; D[Rethink]
+    D --&gt; B
+    B ----&gt;|No| E[End]
+</code></pre>
 <h3 id="sequence-diagram">Sequence Diagram<a class="headerlink" href="#sequence-diagram" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>sequenceDiagram
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    participant User
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    participant Server
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    participant Database
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    User-&gt;&gt;Server: Request data
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>    Server-&gt;&gt;Database: Query
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>    Database--&gt;&gt;Server: Results
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>    Server--&gt;&gt;User: Response
-</code></pre></div>
+<pre><code class="language-mermaid">sequenceDiagram
+    participant User
+    participant Server
+    participant Database
+    User-&gt;&gt;Server: Request data
+    Server-&gt;&gt;Database: Query
+    Database--&gt;&gt;Server: Results
+    Server--&gt;&gt;User: Response
+</code></pre>
 <h2 id="custom-icons-and-emojis">Custom Icons and Emojis<a class="headerlink" href="#custom-icons-and-emojis" title="Permanent link">&para;</a></h2>
 <p>Use Material Design icons and emojis:</p>
 <ul>
@@ -221,30 +210,34 @@ $$</p>
 </ul>
 <h2 id="grids-and-cards">Grids and Cards<a class="headerlink" href="#grids-and-cards" title="Permanent link">&para;</a></h2>
 <p>Organize content in responsive grids:</p>
-<div class="grid cards">
-<ul>
-<li>
-<p>:material-clock-fast:{ .lg .middle } <strong>Fast Performance</strong></p>
-<hr />
-<p>Static site generation ensures lightning-fast page loads</p>
-</li>
-<li>
-<p>:material-security:{ .lg .middle } <strong>Secure by Default</strong></p>
-<hr />
-<p>No server-side code means no vulnerabilities to exploit</p>
-</li>
-<li>
-<p>:material-scale-balance:{ .lg .middle } <strong>Easy to Scale</strong></p>
-<hr />
-<p>Serve from CDN for global reach and reliability</p>
-</li>
-<li>
-<p>:material-puzzle:{ .lg .middle } <strong>Extensible</strong></p>
-<hr />
-<p>Hundreds of plugins and themes available</p>
-</li>
-</ul>
+<div class="grid cards" markdown>
+
+- :material-clock-fast:{ .lg .middle } __Fast Performance__
+
+    ---
+
+    Static site generation ensures lightning-fast page loads
+
+- :material-security:{ .lg .middle } __Secure by Default__
+
+    ---
+
+    No server-side code means no vulnerabilities to exploit
+
+- :material-scale-balance:{ .lg .middle } __Easy to Scale__
+
+    ---
+
+    Serve from CDN for global reach and reliability
+
+- :material-puzzle:{ .lg .middle } __Extensible__
+
+    ---
+
+    Hundreds of plugins and themes available
+
 </div>
+
 <h2 id="data-tables-with-sorting">Data Tables with Sorting<a class="headerlink" href="#data-tables-with-sorting" title="Permanent link">&para;</a></h2>
 <p>Advanced table features:</p>
 <table>
@@ -285,27 +278,25 @@ $$</p>
 </table>
 <h2 id="code-block-features">Code Block Features<a class="headerlink" href="#code-block-features" title="Permanent link">&para;</a></h2>
 <h3 id="line-numbers">Line Numbers<a class="headerlink" href="#line-numbers" title="Permanent link">&para;</a></h3>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
-<span class="normal"><a href="#__codelineno-6-2">2</a></span>
-<span class="normal"><a href="#__codelineno-6-3">3</a></span>
-<span class="normal"><a href="#__codelineno-6-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2"></a>    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3"></a>        <span class="k">return</span> <span class="mi">1</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4"></a>    <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
-<h3 id="highlighting-lines">Highlighting Lines<a class="headerlink" href="#highlighting-lines" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">example</span><span class="p">():</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="hll">    <span class="n">important_line</span> <span class="o">=</span> <span class="s2">&quot;This is highlighted&quot;</span>
-</span><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="hll">    <span class="n">another_important</span> <span class="o">=</span> <span class="s2">&quot;Also highlighted&quot;</span>
-</span><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>    <span class="n">regular_line</span> <span class="o">=</span> <span class="s2">&quot;Normal&quot;</span>
-</code></pre></div>
+<p>```python linenums="1"
+def factorial(n):
+    if n == 0:
+        return 1
+    return n * factorial(n - 1)</p>
+<pre><code>
+### Highlighting Lines
+
+```python hl_lines=&quot;2 3&quot;
+def example():
+    important_line = &quot;This is highlighted&quot;
+    another_important = &quot;Also highlighted&quot;
+    regular_line = &quot;Normal&quot;
+</code></pre>
 <h3 id="title-and-line-numbers">Title and Line Numbers<a class="headerlink" href="#title-and-line-numbers" title="Permanent link">&para;</a></h3>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">example.py</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
-<span class="normal"><a href="#__codelineno-8-2">2</a></span>
-<span class="normal"><a href="#__codelineno-8-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Calculator</span><span class="p">:</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-<a id="__codelineno-8-3" name="__codelineno-8-3"></a>        <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
-</code></pre></div></td></tr></table></div>
+<p><code>python title="example.py" linenums="1"
+class Calculator:
+    def add(self, a, b):
+        return a + b</code></p>
 <h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
 <p>Congratulations! You've learned about advanced features. Check out the <a href="../../api/overview/">API Reference</a> for technical details.</p>
 <hr />
